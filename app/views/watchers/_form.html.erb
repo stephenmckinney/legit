@@ -1,0 +1,31 @@
+<%= form_for(@watcher) do |f| %>
+  <% if @watcher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@watcher.errors.count, "error") %> prohibited this watcher from being saved:</h2>
+
+      <ul class="errors"> 
+      <% @watcher.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="search-fields clearfix">	
+	<ul class="form-field-entries">
+  <li>
+    <%= f.label :name, class:'form-label' %>
+    <%= f.text_field :name, class:'form-field' %>
+  </li>
+  <li>
+    <%= f.label :keywords, class:'form-label' %>
+    <%= f.text_field :keywords, class:'form-field' %>
+  </li>
+ 
+ </ul>
+  
+  <div class="actions">
+    <%= f.submit :class =>'button wide-button'%>
+  </div>
+  </div>
+<% end %>
